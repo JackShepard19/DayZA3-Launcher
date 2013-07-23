@@ -1,7 +1,7 @@
 ﻿Imports Ionic.Zip
 Public Class Form1
     Private Sub Init(sender As Object, e As EventArgs) Handles MyBase.Load
-        'CheckForUpdates()
+        CheckForUpdates()
 
         Dim zoombiesRemoteVersion As String
         Dim downloadVer As String

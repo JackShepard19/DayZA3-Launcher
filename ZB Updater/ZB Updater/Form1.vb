@@ -1,68 +1,52 @@
 ﻿Imports Ionic.Zip
 Public Class Form1
+    Dim updateZIPloc = My.Computer.FileSystem.CurrentDirectory + "\" + "update.zip"
     Private Sub DownloadUpdate(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Dim getRemoteVersion As String
-        Dim downloadUpdate As String
-        Dim extractLocation As String = "update\"
-        Dim launcherEXE As String = "Zoombies Launcher.exe"
-        Dim newUpdate As String = "update.zip"
-
+        Me.Hide()
+        Dim getLauncherRemoteVersion As String
         Try
-            Using WC As New System.Net.WebClient()
-                getRemoteVersion = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/ziplauncher.txt")
+            Using getRemoteVersion As New System.Net.WebClient()
+                getLauncherRemoteVersion = getRemoteVersion.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/ziplauncher2.txt")
             End Using
         Catch ex As Exception
-            MsgBox("The servers are unavilable at this time. Please try again later.")
-            System.Diagnostics.Process.Start("Zoombies Launcher.exe")
-            Me.Close()
+            MsgBox("The servers are unavailable at this time. Please try again later. (ziplauncher.txt)")
         End Try
 
-        My.Computer.Network.DownloadFile(getRemoteVersion, newUpdate)
+        Try
+            If My.Computer.FileSystem.FileExists(updateZIPloc) Then
+                My.Computer.FileSystem.DeleteFile(updateZIPloc)
+            End If
+            If Not String.IsNullOrEmpty(getLauncherRemoteVersion) Then
+                My.Computer.Network.DownloadFile(getLauncherRemoteVersion, "update.zip")
+                Try
+                    ExtractUpdate()
+                    MsgBox("Update Complete!", MsgBoxStyle.Information, "")
+                    My.Computer.FileSystem.DeleteFile(updateZIPloc)
+                    Process.Start("Zoombies Launcher.exe")
+                Catch ex As Exception
+                    MsgBox("An error occured when attempting to extract the update!")
+                End Try
+            Else
+                MsgBox("An error occured when attempting to retrieve the download URL.")
+            End If
+        Catch ex As Exception
+            MsgBox("The servers are unavailable at this time. Please try again later. (update.zip)")
+        End Try
 
-        If My.Computer.FileSystem.FileExists(launcherEXE) Then
-            Try
-                Using zip1 As ZipFile = ZipFile.Read(newUpdate)
-                    For Each exex In zip1
-                        exex.Extract(extractLocation, ExtractExistingFileAction.OverwriteSilently)
-                    Next
-                End Using
+        '"Everything is done master..." "You may rest your head now."
+        Me.Close()
+        'GOOBY PLS! DUNDUTIS!!! GOOBY PLS!
+        'BE GOOD FOR GOOBY... huehuehue
+    End Sub
+    Private Sub ExtractUpdate()
+        Dim UpdateZip = "update.zip"
+        Dim UnpackLocation = My.Computer.FileSystem.CurrentDirectory + "\"
 
-                'Dim getNewFileList As String = extractLocation + "/Zoombies Launcher.exe" + extractLocation + "/clientver.txt" + extractLocation + "\parameters.txt"
-
-                'Dim getFileListArray() As String = {"Zoombies Launcher.exe", "clientver.txt"}
-
-                'Dim newFileArray As My.Computer.FileSystem.CopyFile( _
-                'extractLocation + "/Zoombies Launcher.exe", _
-                'extractLocation + "/clientver.txt", _
-                'extractLocation + "/parameters.txt", override=true)
-
-                Dim zoombiesLauncher As String = extractLocation + "/Zoombies Launcher.exe"
-                Dim clientVer As String = extractLocation + "/clientver.txt"
-                Dim params As String = extractLocation + "/parameters.txt"
-                Dim getParent As String = My.Computer.FileSystem.GetParentPath(extractLocation)
-
-                'My.Computer.FileSystem.MoveFile(zoombiesLauncher + clientVer + params, getParent.ToString)
-                'My.Computer.FileSystem.CopyFile(zoombiesLauncher + clientVer + params, getParent, True)
-                'My.Computer.FileSystem.DeleteDirectory(extractLocation, FileIO.DeleteDirectoryOption.DeleteAllContents)
-                MsgBox("Update complete!")
-                'MsgBox(getParent.ToString)
-                'System.Diagnostics.Process.Start(launcherEXE)
-                My.Computer.FileSystem.DeleteFile(newUpdate)
-                My.Computer.FileSystem.MoveFile(zoombiesLauncher + clientVer + params, getParent)
-                Me.Close()
-            Catch ex As Exception
-                MsgBox("Update failed. Please run the launcher again.")
-                My.Computer.FileSystem.DeleteFile(newUpdate)
-                Me.Close()
-            End Try
-        Else
-            MsgBox("Zoombies Launcher is not installed.")
-            'If My.Computer.FileSystem.FileExists(newUpdate) Then
-            My.Computer.FileSystem.DeleteFile(newUpdate)
-            'Else
-            Me.Close()
-        End If
-        'End If
+        Using doZipExtract As ZipFile = ZipFile.Read(UpdateZip)
+            Dim e As ZipEntry
+            For Each e In doZipExtract
+                e.Extract(UnpackLocation, ExtractExistingFileAction.OverwriteSilently)
+            Next
+        End Using
     End Sub
 End Class

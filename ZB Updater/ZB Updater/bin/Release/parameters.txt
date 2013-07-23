@@ -1,0 +1,1 @@
+﻿-nosplash -nopause -world=Chernarus

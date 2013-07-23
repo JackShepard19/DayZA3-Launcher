@@ -66,7 +66,7 @@ Partial Class Form1
         Me.launcherVersionLabel.Name = "launcherVersionLabel"
         Me.launcherVersionLabel.Size = New System.Drawing.Size(34, 15)
         Me.launcherVersionLabel.TabIndex = 2
-        Me.launcherVersionLabel.Text = "1.3.1"
+        Me.launcherVersionLabel.Text = "1.3.2"
         '
         'MenuStrip1
         '
@@ -88,13 +88,13 @@ Partial Class Form1
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'InstallationCheckToolStripMenuItem

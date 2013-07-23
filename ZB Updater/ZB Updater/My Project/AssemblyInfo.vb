@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("ZB Updater")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyDescription("Updater for the Zoombies Launcher")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ZB Updater")> 
-<Assembly: AssemblyCopyright("Copyright ©  2013")> 
+<Assembly: AssemblyProduct("Zoombies Launcher Updater")> 
+<Assembly: AssemblyCopyright("Copyright © Pwnoz0r 2013")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

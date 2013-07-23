@@ -22,18 +22,31 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(13, 13)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(340, 58)
+        Me.RichTextBox1.TabIndex = 0
+        Me.RichTextBox1.Text = "If you're seeing this box, contact the ZoombiesMod Developers." & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "In other words, y" & _
+    "ou dun goofed."
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(365, 83)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Form1"
         Me.Text = "Zoombies Launcher Updater"
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
 
 End Class
