@@ -1,1 +1,1 @@
-﻿-nosplash -nopause -world=empty -cpuCount=4 -exThreads=7 -maxmem=8192 -maxvram=2048 -showscripterrors
+﻿-nosplash -nopause -world=empty -cpuCount=4 -exThreads=7 -maxmem=8192 -maxvram=2048

@@ -34,10 +34,10 @@ Public Class Form1
         a3value = My.Computer.Registry.GetValue _
         ("HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Bohemia Interactive\Arma 3", "main", Nothing)
 
-        If My.Computer.FileSystem.FileExists(a3value + "\@DayZA3_Chernarus\addons/clientver.txt") = False Then
+        If My.Computer.FileSystem.FileExists(a3value + "\@DayZA3_Chernarus\addons\clientver.txt") = False Then
             Try
                 MsgBox("Since this is your first run, you will need to download the mod.")
-                My.Computer.FileSystem.CopyFile("clientver.txt", a3value + "\@DayZA3_Chernarus\addons/clientver.txt")
+                My.Computer.FileSystem.CopyFile("clientver.txt", a3value + "\@DayZA3_Chernarus\addons\clientver.txt")
                 launchGame.Enabled = False
                 downloadButton.Visible = True
             Catch ex As Exception
@@ -45,10 +45,10 @@ Public Class Form1
             End Try
         End If
 
-        Dim installedModVersion As New System.IO.StreamReader(a3value + "\@DayZA3_Chernarus\addons/clientver.txt")
+        Dim installedModVersion As New System.IO.StreamReader(a3value + "\@DayZA3_Chernarus\addons\clientver.txt")
 
         Dim installedMod As String
-        If My.Computer.FileSystem.FileExists(a3value + "\@DayZA3_Chernarus\addons/clientver.txt") = False Then
+        If My.Computer.FileSystem.FileExists(a3value + "\@DayZA3_Chernarus\addons\clientver.txt") = False Then
             installedVersionVersion.Text = "null"
             installedModVersion.Close()
         Else
@@ -108,7 +108,7 @@ Public Class Form1
         'My.Computer.FileSystem.WriteAllText("debug.txt", "", False)
         'My.Computer.FileSystem.WriteAllText("debug.txt", launchParamsDebug, True)
 
-        System.Diagnostics.Process.Start(a3value + "\" + "arma3.exe ", extraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
+        System.Diagnostics.Process.Start(a3value + "\" + "arma3.exe ", extraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
         'MsgBox(launchParamsDebug)
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -124,7 +124,7 @@ Public Class Form1
         extraParams.Show()
         Me.Hide()
     End Sub
-    Private Sub ZoombiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ZoombiesToolStripMenuItem.Click
+    Private Sub ZoombiesToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim zoombiesRemoteVersion As String
         Try
             Using WC As New System.Net.WebClient()
@@ -164,7 +164,7 @@ Public Class Form1
             MsgBox("The servers are unavailable at this time. Please try again later.")
         End Try
 
-        Dim getNull As New System.IO.StreamReader(a3value + "\@DayZA3_Chernarus\addons/clientver.txt")
+        Dim getNull As New System.IO.StreamReader(a3value + "\@DayZA3_Chernarus\addons\clientver.txt")
 
         Try
             'If My.Computer.FileSystem.FileExists(a3value + "\@Zoombies_A3\addons/clientver.txt") = False Then
@@ -175,7 +175,7 @@ Public Class Form1
                 Call ExtractFiles()
                 MsgBox("Please restart the launcher!")
                 Me.Close()
-            ElseIf My.Computer.FileSystem.FileExists(a3value + "\@DayZA3_Chernarus\addons/clientver.txt") = True Then
+            ElseIf My.Computer.FileSystem.FileExists(a3value + "\@DayZA3_Chernarus\addons\clientver.txt") = True Then
                 My.Computer.Network.DownloadFile(remoteZIP.ToString, downloadVer.ToString, vbNullString, vbNullString, True, 5000, True)
                 getNull.Close()
                 Call ExtractFiles()
@@ -263,5 +263,10 @@ Public Class Form1
     Private Sub InstallationCheckToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InstallationCheckToolStripMenuItem.Click
         installationCheck.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub ChangelogToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangelogToolStripMenuItem.Click
+        Me.Hide()
+        Changelogvb.Show()
     End Sub
 End Class

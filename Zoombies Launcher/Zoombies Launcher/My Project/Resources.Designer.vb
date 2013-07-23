@@ -63,6 +63,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property arma3_beta() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("arma3_beta", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property cba() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("cba", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property hfb() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("hfb", resourceCulture)

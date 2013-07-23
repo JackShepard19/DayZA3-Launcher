@@ -28,8 +28,8 @@
     <ErrorReportUrl>http://zoombiesmod.com</ErrorReportUrl>
     <ProductName>Zoombies Launcher</ProductName>
     <PublisherName>Jonathan Rainier</PublisherName>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>1.2.5.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.3.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -129,6 +129,12 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Changelogvb.Designer.vb">
+      <DependentUpon>Changelogvb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Changelogvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="extraParams.Designer.vb">
       <DependentUpon>extraParams.vb</DependentUpon>
     </Compile>
@@ -168,6 +174,9 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Changelogvb.resx">
+      <DependentUpon>Changelogvb.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="extraParams.resx">
       <DependentUpon>extraParams.vb</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +214,8 @@
   <ItemGroup>
     <Content Include="anotherderpyV_logo_icon.ico" />
     <Content Include="icon.ico" />
+    <None Include="res\images\arma3_beta.png" />
+    <None Include="res\cba.png" />
     <Content Include="zoombies_logo_icon.ico" />
     <None Include="res\images\ZOOMBIES_LOGO.png" />
   </ItemGroup>
