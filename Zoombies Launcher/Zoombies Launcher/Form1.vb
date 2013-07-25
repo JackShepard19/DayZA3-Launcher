@@ -1,11 +1,13 @@
 ﻿Imports Ionic.Zip
 Public Class Form1
     Private Sub Init(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Immediately checks for updates as the application starts.
         CheckForUpdates()
 
         Dim zoombiesRemoteVersion As String
         Dim downloadVer As String
 
+        'Checks the mods version. Sadly I haven't figured out a proper hashing system yet. Possible will add one some time in the future.
         Try
             Using WC As New System.Net.WebClient()
                 zoombiesRemoteVersion = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/version.txt")
@@ -14,12 +16,11 @@ Public Class Form1
             'Error downloading
         End Try
 
+        'Checks of all files that are required to run the program were extracted properly. I could make this an array, but who the hell cares.
         If My.Computer.FileSystem.FileExists("Ionic.Zip.dll") = False Or My.Computer.FileSystem.FileExists("clientver.txt") = False Or My.Computer.FileSystem.FileExists("parameters.txt") = False Then
             MsgBox("Make sure you extract all the files inside of the zip file into this directory!")
             Me.Close()
         End If
-
-        'MsgBox("IF YOU ARE GOING TO STREAM THIS MAKE SURE NOT TO SHOW THE LAUNCHER WHILE DOWNLOADING AN UPDATE!", MsgBoxStyle.Information)
 
         If My.Computer.Network.IsAvailable Then
             Try
@@ -30,10 +31,12 @@ Public Class Form1
             End Try
         End If
 
+        'Gets the installation directory of ArmA3.
         Dim a3value As String
         a3value = My.Computer.Registry.GetValue _
         ("HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Bohemia Interactive\Arma 3", "main", Nothing)
 
+        'Checks if the clientver.txt is available.
         If My.Computer.FileSystem.FileExists(a3value + "\@DayZA3_Chernarus\addons\clientver.txt") = False Then
             Try
                 MsgBox("Since this is your first run, you will need to download the mod.")
@@ -56,7 +59,7 @@ Public Class Form1
             installedModVersion.Close()
         End If
 
-
+        'Sloppy checks
         If installedVersionVersion.Text < zoombiesRemoteVersion Then
             installedVersionVersion.ForeColor = Color.Red
             launchGame.Enabled = False
@@ -107,9 +110,9 @@ Public Class Form1
         'launchParamsDebug = a3value + "\" + "arma3.exe " & extraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3"""
         'My.Computer.FileSystem.WriteAllText("debug.txt", "", False)
         'My.Computer.FileSystem.WriteAllText("debug.txt", launchParamsDebug, True)
+        'MsgBox(launchParamsDebug)
 
         System.Diagnostics.Process.Start(a3value + "\" + "arma3.exe ", extraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
-        'MsgBox(launchParamsDebug)
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Dim hfbRef As String
@@ -167,11 +170,9 @@ Public Class Form1
         Dim getNull As New System.IO.StreamReader(a3value + "\@DayZA3_Chernarus\addons\clientver.txt")
 
         Try
-            'If My.Computer.FileSystem.FileExists(a3value + "\@Zoombies_A3\addons/clientver.txt") = False Then
             If getNull.ReadToEnd = "null" Then
                 My.Computer.Network.DownloadFile(remoteZIP.ToString, downloadVer.ToString, vbNullString, vbNullString, True, 5000, True)
                 getNull.Close()
-                'My.Computer.FileSystem.DeleteDirectory(a3value + "\@Zoombies_A3", True)
                 Call ExtractFiles()
                 MsgBox("Please restart the launcher!")
                 Me.Close()
