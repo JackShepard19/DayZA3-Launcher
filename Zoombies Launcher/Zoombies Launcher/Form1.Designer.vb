@@ -33,6 +33,10 @@ Partial Class Form1
         Me.InstallationCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangelogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportBugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LauncherToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JoinOurIRCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.remoteVersionVersion = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -66,11 +70,11 @@ Partial Class Form1
         Me.launcherVersionLabel.Name = "launcherVersionLabel"
         Me.launcherVersionLabel.Size = New System.Drawing.Size(34, 15)
         Me.launcherVersionLabel.TabIndex = 2
-        Me.launcherVersionLabel.Text = "1.3.2"
+        Me.launcherVersionLabel.Text = "1.3.5"
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.InstallationCheckToolStripMenuItem, Me.LaunchOptionsToolStripMenuItem, Me.ChangelogToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.InstallationCheckToolStripMenuItem, Me.LaunchOptionsToolStripMenuItem, Me.ChangelogToolStripMenuItem, Me.ReportBugToolStripMenuItem, Me.JoinOurIRCToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(640, 24)
@@ -117,6 +121,32 @@ Partial Class Form1
         Me.ChangelogToolStripMenuItem.Name = "ChangelogToolStripMenuItem"
         Me.ChangelogToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
         Me.ChangelogToolStripMenuItem.Text = "Changelog"
+        '
+        'ReportBugToolStripMenuItem
+        '
+        Me.ReportBugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModToolStripMenuItem, Me.LauncherToolStripMenuItem})
+        Me.ReportBugToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportBugToolStripMenuItem.Name = "ReportBugToolStripMenuItem"
+        Me.ReportBugToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
+        Me.ReportBugToolStripMenuItem.Text = "Report Bug"
+        '
+        'ModToolStripMenuItem
+        '
+        Me.ModToolStripMenuItem.Name = "ModToolStripMenuItem"
+        Me.ModToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.ModToolStripMenuItem.Text = "Mod"
+        '
+        'LauncherToolStripMenuItem
+        '
+        Me.LauncherToolStripMenuItem.Name = "LauncherToolStripMenuItem"
+        Me.LauncherToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.LauncherToolStripMenuItem.Text = "Launcher"
+        '
+        'JoinOurIRCToolStripMenuItem
+        '
+        Me.JoinOurIRCToolStripMenuItem.Name = "JoinOurIRCToolStripMenuItem"
+        Me.JoinOurIRCToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.JoinOurIRCToolStripMenuItem.Text = "IRC"
         '
         'Label2
         '
@@ -262,5 +292,9 @@ Partial Class Form1
     Friend WithEvents InstallationCheckToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ChangelogToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents ReportBugToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LauncherToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ModToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents JoinOurIRCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

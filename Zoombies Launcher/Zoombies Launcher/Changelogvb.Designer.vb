@@ -43,6 +43,7 @@ Partial Class Changelogvb
         Me.RichTextBox1.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.Location = New System.Drawing.Point(13, 13)
         Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
         Me.RichTextBox1.Size = New System.Drawing.Size(939, 361)
         Me.RichTextBox1.TabIndex = 2
         Me.RichTextBox1.Text = ""

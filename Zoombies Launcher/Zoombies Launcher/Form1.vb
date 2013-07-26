@@ -270,4 +270,16 @@ Public Class Form1
         Me.Hide()
         Changelogvb.Show()
     End Sub
+
+    Private Sub LauncherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LauncherToolStripMenuItem.Click
+        System.Diagnostics.Process.Start("https://github.com/Pwnoz0r/DayZA3-Launcher/issues/new")
+    End Sub
+
+    Private Sub ModToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModToolStripMenuItem.Click
+        System.Diagnostics.Process.Start("https://github.com/Pwnoz0r/DayZA3/issues/new")
+    End Sub
+
+    Private Sub JoinOurIRCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JoinOurIRCToolStripMenuItem.Click
+        System.Diagnostics.Process.Start("http://webchat.esper.net/?nick=&channels=DayZA3,%2CDayZA3Support")
+    End Sub
 End Class
