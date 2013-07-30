@@ -125,6 +125,7 @@ Public Class ServerBrowser
             Me.Close()
         End Try
         btn_CloseGame.Visible = True
+        bt_launch.Enabled = False
     End Sub
     Private Const CP_NOCLOSE_BUTTON As Integer = &H200
     Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
@@ -140,6 +141,7 @@ Public Class ServerBrowser
                 p.Kill()
                 btn_CloseGame.Visible = False
                 lbl_PlayHostName.Text = ""
+                bt_launch.Enabled = True
             End If
         Next
     End Sub

@@ -29,7 +29,7 @@
     <ProductName>Zoombies Launcher</ProductName>
     <PublisherName>Jonathan Rainier</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.4.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -221,7 +221,6 @@
     <None Include="res\images\hfb.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="anotherderpyV_logo_icon.ico" />
     <Content Include="icon.ico" />
     <None Include="res\images\arma3_beta.png" />
     <None Include="res\cba.png" />

@@ -30,8 +30,8 @@ Partial Class Main
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InstallationCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ServerBrowserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallationCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportBugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -69,9 +69,9 @@ Partial Class Main
         Me.launcherVersionLabel.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.launcherVersionLabel.Location = New System.Drawing.Point(7, 311)
         Me.launcherVersionLabel.Name = "launcherVersionLabel"
-        Me.launcherVersionLabel.Size = New System.Drawing.Size(24, 15)
+        Me.launcherVersionLabel.Size = New System.Drawing.Size(34, 15)
         Me.launcherVersionLabel.TabIndex = 2
-        Me.launcherVersionLabel.Text = "1.4"
+        Me.launcherVersionLabel.Text = "1.4.1"
         '
         'MenuStrip1
         '
@@ -93,21 +93,14 @@ Partial Class Main
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'InstallationCheckToolStripMenuItem
-        '
-        Me.InstallationCheckToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InstallationCheckToolStripMenuItem.Name = "InstallationCheckToolStripMenuItem"
-        Me.InstallationCheckToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
-        Me.InstallationCheckToolStripMenuItem.Text = "Installation Check"
         '
         'ServerBrowserToolStripMenuItem
         '
@@ -115,6 +108,13 @@ Partial Class Main
         Me.ServerBrowserToolStripMenuItem.Name = "ServerBrowserToolStripMenuItem"
         Me.ServerBrowserToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
         Me.ServerBrowserToolStripMenuItem.Text = "Server Browser"
+        '
+        'InstallationCheckToolStripMenuItem
+        '
+        Me.InstallationCheckToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InstallationCheckToolStripMenuItem.Name = "InstallationCheckToolStripMenuItem"
+        Me.InstallationCheckToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
+        Me.InstallationCheckToolStripMenuItem.Text = "Installation Check"
         '
         'LaunchOptionsToolStripMenuItem
         '
