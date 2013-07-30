@@ -71,7 +71,7 @@ Partial Class Main
         Me.launcherVersionLabel.Name = "launcherVersionLabel"
         Me.launcherVersionLabel.Size = New System.Drawing.Size(34, 15)
         Me.launcherVersionLabel.TabIndex = 2
-        Me.launcherVersionLabel.Text = "1.4.1"
+        Me.launcherVersionLabel.Text = "1.4.2"
         '
         'MenuStrip1
         '

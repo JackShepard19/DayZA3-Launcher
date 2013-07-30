@@ -1,18 +1,18 @@
 ﻿Public Class installationCheck
+    Dim a2value As String
+    Dim a2oavalue As String
+    Dim a2oabetavalue As String
+    Dim a3value As String
     Private Sub installationCheck_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim a2value As String
         a2value = My.Computer.Registry.GetValue _
         ("HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Bohemia Interactive Studio\ArmA 2", "main", Nothing)
 
-        Dim a2oavalue As String
         a2oavalue = My.Computer.Registry.GetValue _
         ("HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Bohemia Interactive Studio\ArmA 2 OA", "main", Nothing)
 
-        Dim a2oabetavalue As String
         a2oabetavalue = My.Computer.Registry.GetValue _
         ("HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Bohemia Interactive Studio\ArmA 2 OA", "DATA", Nothing)
 
-        Dim a3value As String
         a3value = My.Computer.Registry.GetValue _
         ("HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Bohemia Interactive\Arma 3", "main", Nothing)
 
@@ -58,7 +58,6 @@
         End If
     End Sub
     Private Sub CheckBeta()
-        Dim a2oavalue As String
         a2oavalue = My.Computer.Registry.GetValue _
        ("HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Bohemia Interactive Studio\ArmA 2 OA", "DATA", Nothing)
 
@@ -76,6 +75,10 @@
             Me.Close()
         End If
     End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles bt_Done.Click
+        Main.Show()
+        Me.Close()
+    End Sub
     Private Const CP_NOCLOSE_BUTTON As Integer = &H200
     Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
         Get
@@ -84,9 +87,4 @@
             Return myCp
         End Get
     End Property
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Main.Show()
-        Me.Close()
-    End Sub
 End Class

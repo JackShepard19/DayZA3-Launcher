@@ -1,5 +1,4 @@
 ﻿Public Class Changelog
-
     Private Sub Changelogvb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim a3value As String
         Dim downloadVer As String

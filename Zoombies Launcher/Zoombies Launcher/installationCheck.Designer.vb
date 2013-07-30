@@ -26,7 +26,7 @@ Partial Class installationCheck
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.bt_Done = New System.Windows.Forms.Button()
         Me.installA2 = New System.Windows.Forms.Label()
         Me.installA2OA = New System.Windows.Forms.Label()
         Me.installA3 = New System.Windows.Forms.Label()
@@ -65,15 +65,15 @@ Partial Class installationCheck
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "ArmA3 Beta:"
         '
-        'Button1
+        'bt_Done
         '
-        Me.Button1.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(457, 130)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Done"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.bt_Done.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_Done.Location = New System.Drawing.Point(457, 130)
+        Me.bt_Done.Name = "bt_Done"
+        Me.bt_Done.Size = New System.Drawing.Size(75, 23)
+        Me.bt_Done.TabIndex = 3
+        Me.bt_Done.Text = "Done"
+        Me.bt_Done.UseVisualStyleBackColor = True
         '
         'installA2
         '
@@ -147,7 +147,7 @@ Partial Class installationCheck
         Me.Controls.Add(Me.installA3)
         Me.Controls.Add(Me.installA2OA)
         Me.Controls.Add(Me.installA2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.bt_Done)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -162,7 +162,7 @@ Partial Class installationCheck
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents bt_Done As System.Windows.Forms.Button
     Friend WithEvents installA2 As System.Windows.Forms.Label
     Friend WithEvents installA2OA As System.Windows.Forms.Label
     Friend WithEvents installA3 As System.Windows.Forms.Label
