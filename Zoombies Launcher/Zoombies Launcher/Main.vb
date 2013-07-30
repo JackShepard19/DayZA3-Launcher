@@ -1,5 +1,5 @@
 ﻿Imports Ionic.Zip
-Public Class Form1
+Public Class Main
     Private Sub Init(sender As Object, e As EventArgs) Handles MyBase.Load
         'Immediately checks for updates as the application starts.
         CheckForUpdates()
@@ -268,7 +268,7 @@ Public Class Form1
 
     Private Sub ChangelogToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangelogToolStripMenuItem.Click
         Me.Hide()
-        Changelogvb.Show()
+        Changelog.Show()
     End Sub
 
     Private Sub LauncherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LauncherToolStripMenuItem.Click
@@ -281,5 +281,10 @@ Public Class Form1
 
     Private Sub JoinOurIRCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JoinOurIRCToolStripMenuItem.Click
         System.Diagnostics.Process.Start("http://webchat.esper.net/?nick=&channels=DayZA3,%2CDayZA3Support")
+    End Sub
+
+    Private Sub ServerBrowserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServerBrowserToolStripMenuItem.Click
+        Me.Hide()
+        ServerBrowser.Show()
     End Sub
 End Class

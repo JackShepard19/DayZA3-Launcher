@@ -1,4 +1,4 @@
-﻿Public Class Changelogvb
+﻿Public Class Changelog
 
     Private Sub Changelogvb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim a3value As String
@@ -17,7 +17,7 @@
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Form1.Show()
+        Main.Show()
         Me.Close()
     End Sub
     Private Const CP_NOCLOSE_BUTTON As Integer = &H200

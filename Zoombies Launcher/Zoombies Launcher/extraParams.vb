@@ -11,7 +11,7 @@
         Catch ex As Exception
             MsgBox("File in use, try again!")
         End Try
-        Form1.Show()
+        Main.Show()
         Me.Close()
     End Sub
     Private Sub extraParams_Load(sender As Object, e As EventArgs) Handles MyBase.Load

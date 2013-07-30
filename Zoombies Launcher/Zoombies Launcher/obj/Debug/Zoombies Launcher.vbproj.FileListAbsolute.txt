@@ -22,11 +22,12 @@ E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies La
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Debug\Zoombies Launcher.pdb
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Debug\Zoombies Launcher.xml
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Debug\Ionic.Zip.dll
-E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.vbprojResolveAssemblyReference.cache
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.About.resources
-E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Changelogvb.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.extraParams.resources
-E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Form1.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.installationCheck.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Resources.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.vbproj.GenerateResource.Cache
+E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.ServerBrowser.resources
+E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.vbprojResolveAssemblyReference.cache
+E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Main.resources
+E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Changelog.resources

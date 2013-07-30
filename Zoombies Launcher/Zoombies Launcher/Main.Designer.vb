@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.launchGame = New System.Windows.Forms.Button()
         Me.launcherVersionLabel = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -31,12 +31,13 @@ Partial Class Form1
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallationCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ServerBrowserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChangelogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportBugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LauncherToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.JoinOurIRCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangelogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.remoteVersionVersion = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -45,11 +46,11 @@ Partial Class Form1
         Me.loadTimer = New System.Windows.Forms.Timer(Me.components)
         Me.motdLabel = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'launchGame
@@ -68,13 +69,13 @@ Partial Class Form1
         Me.launcherVersionLabel.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.launcherVersionLabel.Location = New System.Drawing.Point(7, 311)
         Me.launcherVersionLabel.Name = "launcherVersionLabel"
-        Me.launcherVersionLabel.Size = New System.Drawing.Size(34, 15)
+        Me.launcherVersionLabel.Size = New System.Drawing.Size(24, 15)
         Me.launcherVersionLabel.TabIndex = 2
-        Me.launcherVersionLabel.Text = "1.3.5"
+        Me.launcherVersionLabel.Text = "1.4"
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.InstallationCheckToolStripMenuItem, Me.LaunchOptionsToolStripMenuItem, Me.ChangelogToolStripMenuItem, Me.ReportBugToolStripMenuItem, Me.JoinOurIRCToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ServerBrowserToolStripMenuItem, Me.InstallationCheckToolStripMenuItem, Me.LaunchOptionsToolStripMenuItem, Me.ReportBugToolStripMenuItem, Me.JoinOurIRCToolStripMenuItem, Me.ChangelogToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(640, 24)
@@ -92,13 +93,13 @@ Partial Class Form1
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'InstallationCheckToolStripMenuItem
@@ -108,19 +109,19 @@ Partial Class Form1
         Me.InstallationCheckToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
         Me.InstallationCheckToolStripMenuItem.Text = "Installation Check"
         '
+        'ServerBrowserToolStripMenuItem
+        '
+        Me.ServerBrowserToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ServerBrowserToolStripMenuItem.Name = "ServerBrowserToolStripMenuItem"
+        Me.ServerBrowserToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
+        Me.ServerBrowserToolStripMenuItem.Text = "Server Browser"
+        '
         'LaunchOptionsToolStripMenuItem
         '
         Me.LaunchOptionsToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaunchOptionsToolStripMenuItem.Name = "LaunchOptionsToolStripMenuItem"
         Me.LaunchOptionsToolStripMenuItem.Size = New System.Drawing.Size(108, 20)
         Me.LaunchOptionsToolStripMenuItem.Text = "Launch Options"
-        '
-        'ChangelogToolStripMenuItem
-        '
-        Me.ChangelogToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChangelogToolStripMenuItem.Name = "ChangelogToolStripMenuItem"
-        Me.ChangelogToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
-        Me.ChangelogToolStripMenuItem.Text = "Changelog"
         '
         'ReportBugToolStripMenuItem
         '
@@ -144,9 +145,17 @@ Partial Class Form1
         '
         'JoinOurIRCToolStripMenuItem
         '
+        Me.JoinOurIRCToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.JoinOurIRCToolStripMenuItem.Name = "JoinOurIRCToolStripMenuItem"
-        Me.JoinOurIRCToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.JoinOurIRCToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.JoinOurIRCToolStripMenuItem.Text = "IRC"
+        '
+        'ChangelogToolStripMenuItem
+        '
+        Me.ChangelogToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChangelogToolStripMenuItem.Name = "ChangelogToolStripMenuItem"
+        Me.ChangelogToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
+        Me.ChangelogToolStripMenuItem.Text = "Changelog"
         '
         'Label2
         '
@@ -222,16 +231,6 @@ Partial Class Form1
         Me.LinkLabel1.Text = "Logo created by: blabaalzaurus"
         Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Black
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(513, 25)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(120, 134)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Zoombies_Launcher.My.Resources.Resources.ZOOMBIES_LOGO1
@@ -242,7 +241,17 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 12
         Me.PictureBox2.TabStop = False
         '
-        'Form1
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(513, 25)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(120, 134)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -263,12 +272,12 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
-        Me.Name = "Form1"
+        Me.Name = "Main"
         Me.Text = "Zoombies Universal Launcher"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -296,5 +305,6 @@ Partial Class Form1
     Friend WithEvents LauncherToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents JoinOurIRCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ServerBrowserToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
