@@ -8,7 +8,7 @@ Public Class ServerBrowser
         lbl_PlayHostName.Text = ""
     End Sub
     Private Sub bt_close_Click(sender As Object, e As EventArgs) Handles bt_close.Click
-        Main.Show()
+        'Main.Show()
         Me.Close()
     End Sub
     Private Sub bt_getList_Click(sender As Object, e As EventArgs) Handles bt_getList.Click
@@ -39,6 +39,7 @@ Public Class ServerBrowser
         Dim countryVal As String = "?"
         Dim ipAddress As String = "?"
         Dim serverName As String = "?"
+        Dim playerCount As String = "0"
         Dim port As String = "0"
 
         lv_ServerBrowser.View = View.Details
@@ -54,10 +55,14 @@ Public Class ServerBrowser
                 If getXMLData.Name = "host" Then
                     ipAddress = getXMLData.ReadInnerXml
                 End If
+                If getXMLData.Name = "players" Then
+                    playerCount = getXMLData.ReadInnerXml
+                End If
                 If getXMLData.Name = "name" Then
                     serverName = getXMLData.ReadInnerXml
                     subItemVal = lv_ServerBrowser.Items.Add(serverName)
                     subItemVal.SubItems.Add(countryVal)
+                    subItemVal.SubItems.Add(playerCount)
                     getPing(serverName, ipAddress, subItemVal)
                 End If
                 If getXMLData.Name = "port" Then
@@ -126,16 +131,18 @@ Public Class ServerBrowser
         End Try
         btn_CloseGame.Visible = True
         bt_launch.Enabled = False
+        Me.TopMost = False
     End Sub
     Private Sub btn_CloseGame_Click(sender As Object, e As EventArgs) Handles btn_CloseGame.Click
         For Each p As Process In Process.GetProcesses
             If p.ProcessName = "arma3" Then
                 p.Kill()
-                btn_CloseGame.Visible = False
-                lbl_PlayHostName.Text = ""
-                bt_launch.Enabled = True
             End If
         Next
+        btn_CloseGame.Visible = False
+        lbl_PlayHostName.Text = ""
+        bt_launch.Enabled = True
+        Me.TopMost = True
     End Sub
     Private Const CP_NOCLOSE_BUTTON As Integer = &H200
     Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams

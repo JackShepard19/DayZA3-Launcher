@@ -32,6 +32,7 @@ Partial Class ServerBrowser
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lbl_PlayHostName = New System.Windows.Forms.Label()
         Me.btn_CloseGame = New System.Windows.Forms.Button()
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'bt_launch
@@ -67,7 +68,7 @@ Partial Class ServerBrowser
         'lv_ServerBrowser
         '
         Me.lv_ServerBrowser.AllowColumnReorder = True
-        Me.lv_ServerBrowser.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lv_ServerBrowser.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.lv_ServerBrowser.Dock = System.Windows.Forms.DockStyle.Top
         Me.lv_ServerBrowser.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lv_ServerBrowser.FullRowSelect = True
@@ -83,7 +84,7 @@ Partial Class ServerBrowser
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Hostname"
-        Me.ColumnHeader1.Width = 680
+        Me.ColumnHeader1.Width = 620
         '
         'ColumnHeader2
         '
@@ -91,7 +92,7 @@ Partial Class ServerBrowser
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "Ping"
+        Me.ColumnHeader3.Text = "Players"
         '
         'lbl_PlayHostName
         '
@@ -114,6 +115,10 @@ Partial Class ServerBrowser
         Me.btn_CloseGame.UseVisualStyleBackColor = True
         Me.btn_CloseGame.Visible = False
         '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Ping"
+        '
         'ServerBrowser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -131,6 +136,7 @@ Partial Class ServerBrowser
         Me.MinimizeBox = False
         Me.Name = "ServerBrowser"
         Me.Text = "DayZA3 Server Browser"
+        Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -144,4 +150,5 @@ Partial Class ServerBrowser
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents lbl_PlayHostName As System.Windows.Forms.Label
     Friend WithEvents btn_CloseGame As System.Windows.Forms.Button
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
 End Class

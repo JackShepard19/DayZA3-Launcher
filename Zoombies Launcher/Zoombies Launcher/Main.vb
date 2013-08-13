@@ -269,7 +269,7 @@ Public Class Main
         System.Diagnostics.Process.Start("http://webchat.esper.net/?nick=&channels=DayZA3,%2CDayZA3Support")
     End Sub
     Private Sub ServerBrowserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServerBrowserToolStripMenuItem.Click
-        Me.Hide()
+        'Me.Hide()
         ServerBrowser.Show()
     End Sub
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
