@@ -1,18 +1,29 @@
 ﻿Public Class Changelog
     Private Sub Changelogvb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim a3value As String
-        Dim downloadVer As String
+        Dim ChernarusLog As String
+        Dim TavianaLog As String
 
         Try
             Using WC As New System.Net.WebClient()
-                downloadVer = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/changelog.txt")
+                ChernarusLog = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/changelog.txt")
+            End Using
+        Catch ex As Exception
+            MsgBox("The servers are unavailable at this time. Please try again later.")
+        End Try
+
+        Try
+            Using WC As New System.Net.WebClient()
+                TavianaLog = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/changelog-tavi.txt")
             End Using
         Catch ex As Exception
             MsgBox("The servers are unavailable at this time. Please try again later.")
         End Try
 
         RichTextBox1.ReadOnly = True
-        RichTextBox1.Text = downloadVer.ToString
+        RichTextBox1.Text = ChernarusLog.ToString
+
+        RichTextBox2.ReadOnly = True
+        RichTextBox2.Text = TavianaLog.ToString
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

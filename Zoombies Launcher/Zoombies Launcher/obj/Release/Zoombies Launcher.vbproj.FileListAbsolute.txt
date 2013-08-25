@@ -14,7 +14,6 @@ C:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies La
 C:\Users\Pwn\documents\visual studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies Launcher.vbprojResolveAssemblyReference.cache
 C:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies_Launcher.installationCheck.resources
 C:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies_Launcher.Changelogvb.resources
-E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Release\Zoombies Launcher.exe.config
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies Launcher.exe
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies Launcher.xml
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies Launcher.pdb
@@ -31,3 +30,4 @@ E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies La
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies_Launcher.Changelog.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies_Launcher.Main.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Release\Zoombies_Launcher.ServerBrowser.resources
+E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Release\ZoombiesUniversalLauncher.xml

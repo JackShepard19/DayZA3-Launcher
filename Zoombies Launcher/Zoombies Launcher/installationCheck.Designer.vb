@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class installationCheck
+Partial Class InstallationCheck
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,139 +22,185 @@ Partial Class installationCheck
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(installationCheck))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InstallationCheck))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.bt_Done = New System.Windows.Forms.Button()
-        Me.installA2 = New System.Windows.Forms.Label()
-        Me.installA2OA = New System.Windows.Forms.Label()
-        Me.installA3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.installA2OABeta = New System.Windows.Forms.Label()
-        Me.installBetaVersion = New System.Windows.Forms.Label()
+        Me.tb_arma2 = New System.Windows.Forms.TextBox()
+        Me.tb_arma2oa = New System.Windows.Forms.TextBox()
+        Me.tb_arma3 = New System.Windows.Forms.TextBox()
+        Me.tb_arma2oabeta = New System.Windows.Forms.TextBox()
+        Me.btn_getdir_a2 = New System.Windows.Forms.Button()
+        Me.btn_getdira2oa = New System.Windows.Forms.Button()
+        Me.btn_getdira3 = New System.Windows.Forms.Button()
+        Me.btn_getdira2oabeta = New System.Windows.Forms.Button()
+        Me.fbd_diag = New System.Windows.Forms.FolderBrowserDialog()
+        Me.btn_restoredefault = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(106, 13)
+        Me.Label1.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 7)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(115, 34)
+        Me.Label1.Size = New System.Drawing.Size(68, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ArmA2:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(68, 44)
+        Me.Label2.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 37)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(155, 34)
+        Me.Label2.Size = New System.Drawing.Size(91, 20)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "ArmA2OA:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(41, 106)
+        Me.Label3.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(12, 100)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(180, 34)
+        Me.Label3.Size = New System.Drawing.Size(107, 20)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "ArmA3 Beta:"
         '
         'bt_Done
         '
         Me.bt_Done.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_Done.Location = New System.Drawing.Point(457, 130)
+        Me.bt_Done.Location = New System.Drawing.Point(648, 130)
         Me.bt_Done.Name = "bt_Done"
         Me.bt_Done.Size = New System.Drawing.Size(75, 23)
         Me.bt_Done.TabIndex = 3
         Me.bt_Done.Text = "Done"
         Me.bt_Done.UseVisualStyleBackColor = True
         '
-        'installA2
-        '
-        Me.installA2.AutoSize = True
-        Me.installA2.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.installA2.Location = New System.Drawing.Point(213, 13)
-        Me.installA2.Name = "installA2"
-        Me.installA2.Size = New System.Drawing.Size(152, 34)
-        Me.installA2.TabIndex = 4
-        Me.installA2.Text = "-Boolean-"
-        '
-        'installA2OA
-        '
-        Me.installA2OA.AutoSize = True
-        Me.installA2OA.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.installA2OA.Location = New System.Drawing.Point(213, 44)
-        Me.installA2OA.Name = "installA2OA"
-        Me.installA2OA.Size = New System.Drawing.Size(152, 34)
-        Me.installA2OA.TabIndex = 5
-        Me.installA2OA.Text = "-Boolean-"
-        '
-        'installA3
-        '
-        Me.installA3.AutoSize = True
-        Me.installA3.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.installA3.Location = New System.Drawing.Point(213, 106)
-        Me.installA3.Name = "installA3"
-        Me.installA3.Size = New System.Drawing.Size(152, 34)
-        Me.installA3.TabIndex = 6
-        Me.installA3.Text = "-Boolean-"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 75)
+        Me.Label4.Font = New System.Drawing.Font("Lucida Sans Unicode", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(12, 69)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(220, 34)
+        Me.Label4.Size = New System.Drawing.Size(130, 20)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "ArmA2OA Beta:"
         '
-        'installA2OABeta
+        'tb_arma2
         '
-        Me.installA2OABeta.AutoSize = True
-        Me.installA2OABeta.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.installA2OABeta.Location = New System.Drawing.Point(213, 75)
-        Me.installA2OABeta.Name = "installA2OABeta"
-        Me.installA2OABeta.Size = New System.Drawing.Size(152, 34)
-        Me.installA2OABeta.TabIndex = 8
-        Me.installA2OABeta.Text = "-Boolean-"
+        Me.tb_arma2.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_arma2.Location = New System.Drawing.Point(148, 9)
+        Me.tb_arma2.Name = "tb_arma2"
+        Me.tb_arma2.ReadOnly = True
+        Me.tb_arma2.Size = New System.Drawing.Size(526, 24)
+        Me.tb_arma2.TabIndex = 8
         '
-        'installBetaVersion
+        'tb_arma2oa
         '
-        Me.installBetaVersion.AutoSize = True
-        Me.installBetaVersion.Font = New System.Drawing.Font("Lucida Sans Unicode", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.installBetaVersion.Location = New System.Drawing.Point(371, 75)
-        Me.installBetaVersion.Name = "installBetaVersion"
-        Me.installBetaVersion.Size = New System.Drawing.Size(147, 34)
-        Me.installBetaVersion.TabIndex = 9
-        Me.installBetaVersion.Text = "-Version-"
-        Me.installBetaVersion.Visible = False
+        Me.tb_arma2oa.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_arma2oa.Location = New System.Drawing.Point(148, 39)
+        Me.tb_arma2oa.Name = "tb_arma2oa"
+        Me.tb_arma2oa.ReadOnly = True
+        Me.tb_arma2oa.Size = New System.Drawing.Size(526, 24)
+        Me.tb_arma2oa.TabIndex = 9
         '
-        'installationCheck
+        'tb_arma3
+        '
+        Me.tb_arma3.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_arma3.Location = New System.Drawing.Point(148, 102)
+        Me.tb_arma3.Name = "tb_arma3"
+        Me.tb_arma3.ReadOnly = True
+        Me.tb_arma3.Size = New System.Drawing.Size(526, 24)
+        Me.tb_arma3.TabIndex = 10
+        '
+        'tb_arma2oabeta
+        '
+        Me.tb_arma2oabeta.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_arma2oabeta.Location = New System.Drawing.Point(148, 71)
+        Me.tb_arma2oabeta.Name = "tb_arma2oabeta"
+        Me.tb_arma2oabeta.ReadOnly = True
+        Me.tb_arma2oabeta.Size = New System.Drawing.Size(526, 24)
+        Me.tb_arma2oabeta.TabIndex = 11
+        '
+        'btn_getdir_a2
+        '
+        Me.btn_getdir_a2.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_getdir_a2.Location = New System.Drawing.Point(680, 9)
+        Me.btn_getdir_a2.Name = "btn_getdir_a2"
+        Me.btn_getdir_a2.Size = New System.Drawing.Size(43, 23)
+        Me.btn_getdir_a2.TabIndex = 12
+        Me.btn_getdir_a2.Text = "..."
+        Me.btn_getdir_a2.UseVisualStyleBackColor = True
+        '
+        'btn_getdira2oa
+        '
+        Me.btn_getdira2oa.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_getdira2oa.Location = New System.Drawing.Point(680, 39)
+        Me.btn_getdira2oa.Name = "btn_getdira2oa"
+        Me.btn_getdira2oa.Size = New System.Drawing.Size(43, 23)
+        Me.btn_getdira2oa.TabIndex = 13
+        Me.btn_getdira2oa.Text = "..."
+        Me.btn_getdira2oa.UseVisualStyleBackColor = True
+        '
+        'btn_getdira3
+        '
+        Me.btn_getdira3.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_getdira3.Location = New System.Drawing.Point(680, 101)
+        Me.btn_getdira3.Name = "btn_getdira3"
+        Me.btn_getdira3.Size = New System.Drawing.Size(43, 23)
+        Me.btn_getdira3.TabIndex = 14
+        Me.btn_getdira3.Text = "..."
+        Me.btn_getdira3.UseVisualStyleBackColor = True
+        '
+        'btn_getdira2oabeta
+        '
+        Me.btn_getdira2oabeta.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_getdira2oabeta.Location = New System.Drawing.Point(680, 72)
+        Me.btn_getdira2oabeta.Name = "btn_getdira2oabeta"
+        Me.btn_getdira2oabeta.Size = New System.Drawing.Size(43, 23)
+        Me.btn_getdira2oabeta.TabIndex = 15
+        Me.btn_getdira2oabeta.Text = "..."
+        Me.btn_getdira2oabeta.UseVisualStyleBackColor = True
+        '
+        'btn_restoredefault
+        '
+        Me.btn_restoredefault.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_restoredefault.Location = New System.Drawing.Point(12, 130)
+        Me.btn_restoredefault.Name = "btn_restoredefault"
+        Me.btn_restoredefault.Size = New System.Drawing.Size(130, 23)
+        Me.btn_restoredefault.TabIndex = 16
+        Me.btn_restoredefault.Text = "Restore Values"
+        Me.btn_restoredefault.UseVisualStyleBackColor = True
+        '
+        'InstallationCheck
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(544, 165)
-        Me.Controls.Add(Me.installBetaVersion)
-        Me.Controls.Add(Me.installA2OABeta)
+        Me.ClientSize = New System.Drawing.Size(735, 165)
+        Me.Controls.Add(Me.btn_restoredefault)
+        Me.Controls.Add(Me.btn_getdira2oabeta)
+        Me.Controls.Add(Me.btn_getdira3)
+        Me.Controls.Add(Me.btn_getdira2oa)
+        Me.Controls.Add(Me.btn_getdir_a2)
+        Me.Controls.Add(Me.tb_arma2oabeta)
+        Me.Controls.Add(Me.tb_arma3)
+        Me.Controls.Add(Me.tb_arma2oa)
+        Me.Controls.Add(Me.tb_arma2)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.installA3)
-        Me.Controls.Add(Me.installA2OA)
-        Me.Controls.Add(Me.installA2)
         Me.Controls.Add(Me.bt_Done)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "installationCheck"
-        Me.Text = "Installation Checker"
+        Me.MaximizeBox = False
+        Me.Name = "InstallationCheck"
+        Me.Text = "Installation Check"
+        Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -163,10 +209,15 @@ Partial Class installationCheck
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents bt_Done As System.Windows.Forms.Button
-    Friend WithEvents installA2 As System.Windows.Forms.Label
-    Friend WithEvents installA2OA As System.Windows.Forms.Label
-    Friend WithEvents installA3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents installA2OABeta As System.Windows.Forms.Label
-    Friend WithEvents installBetaVersion As System.Windows.Forms.Label
+    Friend WithEvents tb_arma2 As System.Windows.Forms.TextBox
+    Friend WithEvents tb_arma2oa As System.Windows.Forms.TextBox
+    Friend WithEvents tb_arma3 As System.Windows.Forms.TextBox
+    Friend WithEvents tb_arma2oabeta As System.Windows.Forms.TextBox
+    Friend WithEvents btn_getdir_a2 As System.Windows.Forms.Button
+    Friend WithEvents btn_getdira2oa As System.Windows.Forms.Button
+    Friend WithEvents btn_getdira3 As System.Windows.Forms.Button
+    Friend WithEvents btn_getdira2oabeta As System.Windows.Forms.Button
+    Friend WithEvents fbd_diag As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents btn_restoredefault As System.Windows.Forms.Button
 End Class

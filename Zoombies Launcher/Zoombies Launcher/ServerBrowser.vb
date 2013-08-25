@@ -121,8 +121,8 @@ Public Class ServerBrowser
                 Dim second As String = first.Substring(0, first.Length() - 1)
                 'Console.WriteLine(ipArray.Item(second) + ":" + portArray.Item(second))
                 lbl_PlayHostName.Text = "Playing on: " + """" + second + """"
-                Console.WriteLine(a3value + "\" + "arma3.exe " + "-connect=" + ipArray.Item(second) + " -port=" + portArray.Item(second) + extraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
-                System.Diagnostics.Process.Start(a3value + "\" + "arma3.exe ", "-connect=" + ipArray.Item(second) + " -port=" + portArray.Item(second) + extraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
+                Console.WriteLine(a3value + "\" + "arma3.exe " + "-connect=" + ipArray.Item(second) + " -port=" + portArray.Item(second) + ExtraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
+                System.Diagnostics.Process.Start(a3value + "\" + "arma3.exe ", "-connect=" + ipArray.Item(second) + " -port=" + portArray.Item(second) + ExtraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & a2value & ";" & a2oavalue & ";" & a2oavalue & "\Expansion" & ";" & a3value & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
             End If
         Catch ex As Exception
             MsgBox("Taking too long to get server information...")

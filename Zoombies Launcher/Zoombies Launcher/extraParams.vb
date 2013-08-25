@@ -1,4 +1,4 @@
-﻿Public Class extraParams
+﻿Public Class ExtraParams
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim extraparams As String

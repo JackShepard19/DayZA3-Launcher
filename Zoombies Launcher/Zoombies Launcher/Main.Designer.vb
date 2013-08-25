@@ -26,31 +26,35 @@ Partial Class Main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.launchGame = New System.Windows.Forms.Button()
         Me.launcherVersionLabel = New System.Windows.Forms.Label()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ms_main = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallationCheckToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaunchOptionsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangelogToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IRCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ServerBrowserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InstallationCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LaunchOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportBugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LauncherToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.JoinOurIRCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChangelogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbl_rv = New System.Windows.Forms.Label()
         Me.remoteVersionVersion = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbl_iv = New System.Windows.Forms.Label()
         Me.installedVersionVersion = New System.Windows.Forms.Label()
         Me.downloadButton = New System.Windows.Forms.Button()
         Me.loadTimer = New System.Windows.Forms.Timer(Me.components)
         Me.motdLabel = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.llbl_zoombieslogo = New System.Windows.Forms.LinkLabel()
+        Me.pb_zoombieslogo = New System.Windows.Forms.PictureBox()
+        Me.pb_hfbservers = New System.Windows.Forms.PictureBox()
+        Me.cb_modselect = New System.Windows.Forms.ComboBox()
+        Me.llbl_hfbservers = New System.Windows.Forms.LinkLabel()
+        Me.lbl_modselection = New System.Windows.Forms.Label()
+        Me.CleanupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ms_main.SuspendLayout()
+        CType(Me.pb_zoombieslogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_hfbservers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'launchGame
@@ -67,61 +71,71 @@ Partial Class Main
         '
         Me.launcherVersionLabel.AutoSize = True
         Me.launcherVersionLabel.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.launcherVersionLabel.Location = New System.Drawing.Point(7, 311)
+        Me.launcherVersionLabel.Location = New System.Drawing.Point(7, 316)
         Me.launcherVersionLabel.Name = "launcherVersionLabel"
         Me.launcherVersionLabel.Size = New System.Drawing.Size(34, 15)
         Me.launcherVersionLabel.TabIndex = 2
-        Me.launcherVersionLabel.Text = "1.4.3"
+        Me.launcherVersionLabel.Text = "1.5.1"
         '
-        'MenuStrip1
+        'ms_main
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ServerBrowserToolStripMenuItem, Me.InstallationCheckToolStripMenuItem, Me.LaunchOptionsToolStripMenuItem, Me.ReportBugToolStripMenuItem, Me.JoinOurIRCToolStripMenuItem, Me.ChangelogToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(640, 24)
-        Me.MenuStrip1.TabIndex = 3
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.ms_main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ServerBrowserToolStripMenuItem, Me.ReportBugToolStripMenuItem, Me.CleanupToolStripMenuItem})
+        Me.ms_main.Location = New System.Drawing.Point(0, 0)
+        Me.ms_main.Name = "ms_main"
+        Me.ms_main.Size = New System.Drawing.Size(640, 24)
+        Me.ms_main.TabIndex = 3
+        Me.ms_main.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InstallationCheckToolStripMenuItem1, Me.LaunchOptionsToolStripMenuItem1, Me.ChangelogToolStripMenuItem1, Me.IRCToolStripMenuItem, Me.AboutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
+        'InstallationCheckToolStripMenuItem1
+        '
+        Me.InstallationCheckToolStripMenuItem1.Name = "InstallationCheckToolStripMenuItem1"
+        Me.InstallationCheckToolStripMenuItem1.Size = New System.Drawing.Size(176, 22)
+        Me.InstallationCheckToolStripMenuItem1.Text = "Installation Check"
+        '
+        'LaunchOptionsToolStripMenuItem1
+        '
+        Me.LaunchOptionsToolStripMenuItem1.Name = "LaunchOptionsToolStripMenuItem1"
+        Me.LaunchOptionsToolStripMenuItem1.Size = New System.Drawing.Size(176, 22)
+        Me.LaunchOptionsToolStripMenuItem1.Text = "Launch Options"
+        '
+        'ChangelogToolStripMenuItem1
+        '
+        Me.ChangelogToolStripMenuItem1.Name = "ChangelogToolStripMenuItem1"
+        Me.ChangelogToolStripMenuItem1.Size = New System.Drawing.Size(176, 22)
+        Me.ChangelogToolStripMenuItem1.Text = "Changelog"
+        '
+        'IRCToolStripMenuItem
+        '
+        Me.IRCToolStripMenuItem.Name = "IRCToolStripMenuItem"
+        Me.IRCToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.IRCToolStripMenuItem.Text = "IRC"
+        '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ServerBrowserToolStripMenuItem
         '
-        Me.ServerBrowserToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ServerBrowserToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ServerBrowserToolStripMenuItem.Name = "ServerBrowserToolStripMenuItem"
-        Me.ServerBrowserToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
+        Me.ServerBrowserToolStripMenuItem.Size = New System.Drawing.Size(106, 20)
         Me.ServerBrowserToolStripMenuItem.Text = "Server Browser"
-        '
-        'InstallationCheckToolStripMenuItem
-        '
-        Me.InstallationCheckToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InstallationCheckToolStripMenuItem.Name = "InstallationCheckToolStripMenuItem"
-        Me.InstallationCheckToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
-        Me.InstallationCheckToolStripMenuItem.Text = "Installation Check"
-        '
-        'LaunchOptionsToolStripMenuItem
-        '
-        Me.LaunchOptionsToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LaunchOptionsToolStripMenuItem.Name = "LaunchOptionsToolStripMenuItem"
-        Me.LaunchOptionsToolStripMenuItem.Size = New System.Drawing.Size(108, 20)
-        Me.LaunchOptionsToolStripMenuItem.Text = "Launch Options"
         '
         'ReportBugToolStripMenuItem
         '
@@ -143,29 +157,15 @@ Partial Class Main
         Me.LauncherToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.LauncherToolStripMenuItem.Text = "Launcher"
         '
-        'JoinOurIRCToolStripMenuItem
+        'lbl_rv
         '
-        Me.JoinOurIRCToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.JoinOurIRCToolStripMenuItem.Name = "JoinOurIRCToolStripMenuItem"
-        Me.JoinOurIRCToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
-        Me.JoinOurIRCToolStripMenuItem.Text = "IRC"
-        '
-        'ChangelogToolStripMenuItem
-        '
-        Me.ChangelogToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChangelogToolStripMenuItem.Name = "ChangelogToolStripMenuItem"
-        Me.ChangelogToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
-        Me.ChangelogToolStripMenuItem.Text = "Changelog"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 264)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(111, 16)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Remote Version:"
+        Me.lbl_rv.AutoSize = True
+        Me.lbl_rv.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_rv.Location = New System.Drawing.Point(7, 264)
+        Me.lbl_rv.Name = "lbl_rv"
+        Me.lbl_rv.Size = New System.Drawing.Size(111, 16)
+        Me.lbl_rv.TabIndex = 4
+        Me.lbl_rv.Text = "Remote Version:"
         '
         'remoteVersionVersion
         '
@@ -178,15 +178,15 @@ Partial Class Main
         Me.remoteVersionVersion.TabIndex = 5
         Me.remoteVersionVersion.Text = "-Version-"
         '
-        'Label4
+        'lbl_iv
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(7, 287)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(118, 16)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Installed Version:"
+        Me.lbl_iv.AutoSize = True
+        Me.lbl_iv.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_iv.Location = New System.Drawing.Point(7, 287)
+        Me.lbl_iv.Name = "lbl_iv"
+        Me.lbl_iv.Size = New System.Drawing.Size(118, 16)
+        Me.lbl_iv.TabIndex = 6
+        Me.lbl_iv.Text = "Installed Version:"
         '
         'installedVersionVersion
         '
@@ -194,9 +194,9 @@ Partial Class Main
         Me.installedVersionVersion.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.installedVersionVersion.Location = New System.Drawing.Point(124, 287)
         Me.installedVersionVersion.Name = "installedVersionVersion"
-        Me.installedVersionVersion.Size = New System.Drawing.Size(32, 16)
+        Me.installedVersionVersion.Size = New System.Drawing.Size(92, 16)
         Me.installedVersionVersion.TabIndex = 7
-        Me.installedVersionVersion.Text = "null"
+        Me.installedVersionVersion.Text = "Select a mod!"
         '
         'downloadButton
         '
@@ -218,93 +218,141 @@ Partial Class Main
         Me.motdLabel.TabIndex = 11
         Me.motdLabel.Text = "MOTD"
         '
-        'LinkLabel1
+        'llbl_zoombieslogo
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel1.Location = New System.Drawing.Point(246, 316)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(174, 15)
-        Me.LinkLabel1.TabIndex = 13
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Logo created by: blabaalzaurus"
-        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Black
+        Me.llbl_zoombieslogo.AutoSize = True
+        Me.llbl_zoombieslogo.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llbl_zoombieslogo.LinkColor = System.Drawing.Color.Black
+        Me.llbl_zoombieslogo.Location = New System.Drawing.Point(246, 316)
+        Me.llbl_zoombieslogo.Name = "llbl_zoombieslogo"
+        Me.llbl_zoombieslogo.Size = New System.Drawing.Size(174, 15)
+        Me.llbl_zoombieslogo.TabIndex = 13
+        Me.llbl_zoombieslogo.TabStop = True
+        Me.llbl_zoombieslogo.Text = "Logo created by: blabaalzaurus"
+        Me.llbl_zoombieslogo.VisitedLinkColor = System.Drawing.Color.Black
         '
-        'PictureBox2
+        'pb_zoombieslogo
         '
-        Me.PictureBox2.Image = Global.Zoombies_Launcher.My.Resources.Resources.ZOOMBIES_LOGO1
-        Me.PictureBox2.Location = New System.Drawing.Point(229, 264)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(278, 49)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 12
-        Me.PictureBox2.TabStop = False
+        Me.pb_zoombieslogo.Image = Global.Zoombies_Launcher.My.Resources.Resources.ZOOMBIES_LOGO1
+        Me.pb_zoombieslogo.Location = New System.Drawing.Point(229, 264)
+        Me.pb_zoombieslogo.Name = "pb_zoombieslogo"
+        Me.pb_zoombieslogo.Size = New System.Drawing.Size(278, 49)
+        Me.pb_zoombieslogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_zoombieslogo.TabIndex = 12
+        Me.pb_zoombieslogo.TabStop = False
         '
-        'PictureBox1
+        'pb_hfbservers
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(513, 25)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(120, 134)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.pb_hfbservers.Image = CType(resources.GetObject("pb_hfbservers.Image"), System.Drawing.Image)
+        Me.pb_hfbservers.Location = New System.Drawing.Point(513, 25)
+        Me.pb_hfbservers.Name = "pb_hfbservers"
+        Me.pb_hfbservers.Size = New System.Drawing.Size(120, 134)
+        Me.pb_hfbservers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_hfbservers.TabIndex = 1
+        Me.pb_hfbservers.TabStop = False
+        '
+        'cb_modselect
+        '
+        Me.cb_modselect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cb_modselect.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cb_modselect.FormattingEnabled = True
+        Me.cb_modselect.Items.AddRange(New Object() {"Chernarus", "Taviana"})
+        Me.cb_modselect.Location = New System.Drawing.Point(513, 203)
+        Me.cb_modselect.Name = "cb_modselect"
+        Me.cb_modselect.Size = New System.Drawing.Size(120, 24)
+        Me.cb_modselect.TabIndex = 14
+        '
+        'llbl_hfbservers
+        '
+        Me.llbl_hfbservers.AutoSize = True
+        Me.llbl_hfbservers.Font = New System.Drawing.Font("Lucida Sans Unicode", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llbl_hfbservers.LinkColor = System.Drawing.Color.Black
+        Me.llbl_hfbservers.Location = New System.Drawing.Point(553, 316)
+        Me.llbl_hfbservers.Name = "llbl_hfbservers"
+        Me.llbl_hfbservers.Size = New System.Drawing.Size(80, 15)
+        Me.llbl_hfbservers.TabIndex = 15
+        Me.llbl_hfbservers.TabStop = True
+        Me.llbl_hfbservers.Text = "Rent a server!"
+        Me.llbl_hfbservers.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'lbl_modselection
+        '
+        Me.lbl_modselection.AutoSize = True
+        Me.lbl_modselection.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_modselection.Location = New System.Drawing.Point(510, 184)
+        Me.lbl_modselection.Name = "lbl_modselection"
+        Me.lbl_modselection.Size = New System.Drawing.Size(100, 16)
+        Me.lbl_modselection.TabIndex = 16
+        Me.lbl_modselection.Text = "Mod Selection:"
+        '
+        'CleanupToolStripMenuItem
+        '
+        Me.CleanupToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CleanupToolStripMenuItem.Name = "CleanupToolStripMenuItem"
+        Me.CleanupToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
+        Me.CleanupToolStripMenuItem.Text = "Cleanup"
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(640, 335)
-        Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.lbl_modselection)
+        Me.Controls.Add(Me.llbl_hfbservers)
+        Me.Controls.Add(Me.cb_modselect)
+        Me.Controls.Add(Me.llbl_zoombieslogo)
+        Me.Controls.Add(Me.pb_zoombieslogo)
         Me.Controls.Add(Me.motdLabel)
         Me.Controls.Add(Me.downloadButton)
         Me.Controls.Add(Me.installedVersionVersion)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lbl_iv)
         Me.Controls.Add(Me.remoteVersionVersion)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lbl_rv)
         Me.Controls.Add(Me.launcherVersionLabel)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pb_hfbservers)
         Me.Controls.Add(Me.launchGame)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.ms_main)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MainMenuStrip = Me.ms_main
         Me.MaximizeBox = False
         Me.Name = "Main"
         Me.Text = "Zoombies Universal Launcher"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ms_main.ResumeLayout(False)
+        Me.ms_main.PerformLayout()
+        CType(Me.pb_zoombieslogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_hfbservers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents launchGame As System.Windows.Forms.Button
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents pb_hfbservers As System.Windows.Forms.PictureBox
     Friend WithEvents launcherVersionLabel As System.Windows.Forms.Label
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents ms_main As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lbl_rv As System.Windows.Forms.Label
     Friend WithEvents remoteVersionVersion As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lbl_iv As System.Windows.Forms.Label
     Friend WithEvents installedVersionVersion As System.Windows.Forms.Label
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LaunchOptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents downloadButton As System.Windows.Forms.Button
     Friend WithEvents loadTimer As System.Windows.Forms.Timer
     Friend WithEvents motdLabel As System.Windows.Forms.Label
-    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
-    Friend WithEvents InstallationCheckToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ChangelogToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents llbl_zoombieslogo As System.Windows.Forms.LinkLabel
+    Friend WithEvents pb_zoombieslogo As System.Windows.Forms.PictureBox
     Friend WithEvents ReportBugToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LauncherToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents JoinOurIRCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ServerBrowserToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents cb_modselect As System.Windows.Forms.ComboBox
+    Friend WithEvents llbl_hfbservers As System.Windows.Forms.LinkLabel
+    Friend WithEvents lbl_modselection As System.Windows.Forms.Label
+    Friend WithEvents InstallationCheckToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaunchOptionsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents IRCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ChangelogToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CleanupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

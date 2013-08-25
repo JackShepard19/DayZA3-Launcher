@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Zoombies Launcher")> 
-<Assembly: AssemblyDescription("Launcher for Zoombies Mod")> 
+<Assembly: AssemblyTitle("Zoombies Universal Launcher")> 
+<Assembly: AssemblyDescription("Universal Launcher for Zoombies Mod")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Zoombies Launcher")> 
-<Assembly: AssemblyCopyright("Copyright © Pwnoz0r 2013")> 
+<Assembly: AssemblyCopyright("Pwnoz0r (Jonathan Rainier) © 2013")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.4.3.0")> 
-<Assembly: AssemblyFileVersion("1.4.3.0")> 
+<Assembly: AssemblyVersion("1.5.1.0")> 
+<Assembly: AssemblyFileVersion("1.5.1.0")> 

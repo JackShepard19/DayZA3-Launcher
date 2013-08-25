@@ -14,7 +14,6 @@ C:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies La
 C:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Interop.Shell32.dll
 C:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.vbproj.ResolveComReference.cache
 C:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Debug\Ionic.Zip.dll
-E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Debug\Zoombies Launcher.exe.config
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.exe
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.xml
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.pdb
@@ -28,6 +27,7 @@ E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies La
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Resources.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.vbproj.GenerateResource.Cache
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.ServerBrowser.resources
-E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.vbprojResolveAssemblyReference.cache
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Main.resources
 E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies_Launcher.Changelog.resources
+E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\bin\Debug\ZoombiesUniversalLauncher.xml
+E:\Users\Pwn\Documents\Visual Studio 2012\Projects\Zoombies Launcher\Zoombies Launcher\obj\Debug\Zoombies Launcher.vbprojResolveAssemblyReference.cache
