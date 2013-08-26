@@ -38,6 +38,7 @@ Partial Class Main
         Me.ReportBugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LauncherToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CleanupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbl_rv = New System.Windows.Forms.Label()
         Me.remoteVersionVersion = New System.Windows.Forms.Label()
         Me.lbl_iv = New System.Windows.Forms.Label()
@@ -51,7 +52,7 @@ Partial Class Main
         Me.cb_modselect = New System.Windows.Forms.ComboBox()
         Me.llbl_hfbservers = New System.Windows.Forms.LinkLabel()
         Me.lbl_modselection = New System.Windows.Forms.Label()
-        Me.CleanupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.checkvertimer = New System.Windows.Forms.Timer(Me.components)
         Me.ms_main.SuspendLayout()
         CType(Me.pb_zoombieslogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_hfbservers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,7 +76,7 @@ Partial Class Main
         Me.launcherVersionLabel.Name = "launcherVersionLabel"
         Me.launcherVersionLabel.Size = New System.Drawing.Size(34, 15)
         Me.launcherVersionLabel.TabIndex = 2
-        Me.launcherVersionLabel.Text = "1.5.1"
+        Me.launcherVersionLabel.Text = "1.5.3"
         '
         'ms_main
         '
@@ -156,6 +157,13 @@ Partial Class Main
         Me.LauncherToolStripMenuItem.Name = "LauncherToolStripMenuItem"
         Me.LauncherToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.LauncherToolStripMenuItem.Text = "Launcher"
+        '
+        'CleanupToolStripMenuItem
+        '
+        Me.CleanupToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CleanupToolStripMenuItem.Name = "CleanupToolStripMenuItem"
+        Me.CleanupToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
+        Me.CleanupToolStripMenuItem.Text = "Cleanup"
         '
         'lbl_rv
         '
@@ -285,12 +293,9 @@ Partial Class Main
         Me.lbl_modselection.TabIndex = 16
         Me.lbl_modselection.Text = "Mod Selection:"
         '
-        'CleanupToolStripMenuItem
+        'checkvertimer
         '
-        Me.CleanupToolStripMenuItem.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CleanupToolStripMenuItem.Name = "CleanupToolStripMenuItem"
-        Me.CleanupToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
-        Me.CleanupToolStripMenuItem.Text = "Cleanup"
+        Me.checkvertimer.Interval = 1000
         '
         'Main
         '
@@ -354,5 +359,6 @@ Partial Class Main
     Friend WithEvents IRCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ChangelogToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CleanupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents checkvertimer As System.Windows.Forms.Timer
 
 End Class

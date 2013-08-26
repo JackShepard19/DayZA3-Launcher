@@ -12,12 +12,14 @@ Public Class Main
     Dim downloadVer As String
     Dim downloadVerTavi As String
     Dim zoombiesRemoteVersion As String
+    Dim taviremoteversion As String
     Dim hfbRef As String
     Dim installedMod As String
     Dim getRemoteMOTD As String
     Dim launcherRemoteVersion As String
     Dim ZoombiesSettingsFile As String
     Private Sub Init(sender As Object, e As EventArgs) Handles MyBase.Load
+        RecheckClientUpdates()
         'Immediately checks for updates as the application starts.
         CheckForUpdates()
 
@@ -154,7 +156,7 @@ Public Class Main
 
         launchGame.Enabled = False
 
-        'Checks the mods version. Sadly, I haven't decideed on a proper hashing system yet. Most likely I will add one some time in the future.
+        'Checks the mods versions. Sadly, I haven't decideed on a proper hashing system yet. Most likely I will add one some time in the future.
         Try
             Using WC As New System.Net.WebClient()
                 zoombiesRemoteVersion = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/version.txt")
@@ -269,9 +271,9 @@ Public Class Main
 
         'Once things are all set and ready to go, we can launch the game and play some DayZA3!
         If cb_modselect.Text = "Chernarus" Then
-            System.Diagnostics.Process.Start(ArmA3Path + "\" + "arma3.exe ", ExtraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & ArmA2Path & ";" & ArmA2OAPath & ";" & ArmA2OAPath & "\Expansion" & ";" & ArmA3Path & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
+            System.Diagnostics.Process.Start(ArmA3Path + "\" + "arma3.exe ", "-world=chernarus " + ExtraParams.extraBox.Text & " " & """-mod=@DayZA3_Chernarus;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & ArmA2Path & ";" & ArmA2OAPath & ";" & ArmA2OAPath & "\Expansion" & ";" & ArmA3Path & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
         ElseIf cb_modselect.Text = "Taviana" Then
-            System.Diagnostics.Process.Start(ArmA3Path + "\" + "arma3.exe ", ExtraParams.extraBox.Text & " " & """-mod=@DayZA3_Taviana;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & ArmA2Path & ";" & ArmA2OAPath & ";" & ArmA2OAPath & "\Expansion" & ";" & ArmA3Path & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
+            System.Diagnostics.Process.Start(ArmA3Path + "\" + "arma3.exe ", "-world=tavi " + ExtraParams.extraBox.Text & " " & """-mod=@DayZA3_Taviana;@CBA_A3;@AllInArma\ProductDummies;C:\Program Files (x86)\Steam\steamapps\common\Take On Helicopter;" & ArmA2Path & ";" & ArmA2OAPath & ";" & ArmA2OAPath & "\Expansion" & ";" & ArmA3Path & ";" & "@AllInArma\Core;@AllInArma\PostA3""")
         End If
     End Sub
     Private Sub ZoombiesToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -507,11 +509,11 @@ Public Class Main
                 downloadButton.Visible = False
             End If
         ElseIf cb_modselect.Text = "Taviana" Then
-            If installedVersionVersion.Text < zoombiesRemoteVersion Then
+            If installedVersionVersion.Text < taviremoteversion Then
                 installedVersionVersion.ForeColor = Color.Red
                 launchGame.Enabled = False
                 downloadButton.Visible = True
-            ElseIf installedVersionVersion.Text > zoombiesRemoteVersion Then
+            ElseIf installedVersionVersion.Text > taviremoteversion Then
                 installedVersionVersion.ForeColor = Color.Red
                 launchGame.Enabled = False
                 downloadButton.Visible = True
@@ -519,11 +521,33 @@ Public Class Main
                 installedVersionVersion.ForeColor = Color.Red
                 launchGame.Enabled = False
                 downloadButton.Visible = True
-            ElseIf installedVersionVersion.Text = zoombiesRemoteVersion Then
+            ElseIf installedVersionVersion.Text = taviremoteversion Then
                 installedVersionVersion.ForeColor = Color.LimeGreen
                 launchGame.Enabled = True
                 downloadButton.Visible = False
             End If
+        End If
+
+        Try
+            Using WC As New System.Net.WebClient()
+                zoombiesRemoteVersion = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/version.txt")
+            End Using
+        Catch ex As Exception
+            MsgBox("The servers are unavailable at this time. Please try again later. (version.txt, Init)")
+        End Try
+
+        Try
+            Using WC As New System.Net.WebClient()
+                taviremoteversion = WC.DownloadString("http://cdn.pwnoz0r.com/zoombies/launcher/read/version-tavi.txt")
+            End Using
+        Catch ex As Exception
+            MsgBox("The servers are unavailable at this time. Please try again later. (version-tavi.txt, Init)")
+        End Try
+
+        If cb_modselect.Text = "Chernarus" Then
+            remoteVersionVersion.Text = zoombiesRemoteVersion
+        ElseIf cb_modselect.Text = "Taviana" Then
+            remoteVersionVersion.Text = taviremoteversion
         End If
     End Sub
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pb_zoombieslogo.Click
@@ -614,5 +638,20 @@ Public Class Main
         Else
             'Do nothing
         End If
+    End Sub
+    Dim elapsed As Integer = 0
+    Private Sub checkvertimer_Tick(sender As Object, e As EventArgs) Handles checkvertimer.Tick
+        'This will wait 10 minutes until next check.
+        If elapsed < 600 Then
+            elapsed += 1
+        Else
+            elapsed = 0
+            checkvertimer.Stop()
+            CheckForUpdates()
+            RecheckClientUpdates()
+        End If
+    End Sub
+    Public Sub RecheckClientUpdates()
+        checkvertimer.Start()
     End Sub
 End Class
