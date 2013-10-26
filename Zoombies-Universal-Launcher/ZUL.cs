@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Microsoft.Win32;
 using System.IO;
+using Ionic.Zip;
 
 namespace Zoombies_Universal_Launcher
 {
@@ -34,7 +35,10 @@ namespace Zoombies_Universal_Launcher
             this.ReadWriteConfigFile();
             this.LocalVersions();
             this.GetMOTD();
+            this.CheckInstalledModVersions();
             btn_launchgame.Enabled = true;
+
+            lbl_ProgressText.Text = "";
         }
 
         private void CheckForUpdates()
@@ -272,10 +276,10 @@ namespace Zoombies_Universal_Launcher
             }
         }
 
-        private void WriteConfigFile()
-        {
+        //private void WriteConfigFile()
+        //{
 
-        }
+        //}
   
         private void LocalVersions()
         {
@@ -292,6 +296,94 @@ namespace Zoombies_Universal_Launcher
             lbl_installedVersion.Visible = true;
             lbl_getRemoteVersion.Visible = true;
             lbl_remoteVersion.Visible = true;
+        }
+
+        public string GetDownloadURL(string url)
+        {
+            WebClient wc = new WebClient();
+            wc.Proxy = null;
+            string result = string.Empty;
+
+            try
+            {
+                result = wc.DownloadString(url);
+            }
+            catch (WebException ex)
+            {
+                MessageBox.Show(ex.ToString(), ApplicationName);
+                Application.Exit();
+            }
+
+            return result;
+        }
+
+        public string GetSaveName(string downloadloc)
+        {
+            WebClient wc = new WebClient();
+            wc.Proxy = null;            
+            string downloadresult = string.Empty;
+
+            try
+            {
+                downloadresult = wc.DownloadString(downloadloc);
+                Console.WriteLine(downloadresult);
+            }
+            catch (WebException ex)
+            {
+                MessageBox.Show(ex.ToString(), ApplicationName);
+                Application.Exit();
+            }
+
+            return downloadresult;
+        }
+
+        public static string ClientVer_Chernarus;
+
+        private void CheckInstalledModVersions()
+        {
+            ClientVer_Chernarus = GlobalArmA3Location + "\\@DayZA3_Chernarus\\addons\\clientver.txt";
+            string Chernarus_CurrentModVersion = GetDownloadURL("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_CurrentModVersion.txt");
+
+            if (lbl_installedVersion.Text != Chernarus_CurrentModVersion)
+            {
+                if (File.Exists(ClientVer_Chernarus))
+                {
+                    string ClientVer_Chernarus_ReadText = File.ReadAllText(ClientVer_Chernarus);
+
+                    Console.WriteLine(ClientVer_Chernarus_ReadText);
+                }
+            }
+        }
+
+        private void ExtractMod(string mod)
+        {
+            switch (mod)
+            {
+                case "Chernarus":
+                    if (!String.IsNullOrEmpty(GlobalArmA3Location))
+                    {
+                        string ZipName = GetDownloadURL("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_CurrentVersion.txt");
+
+                        string dir = GlobalArmA3Location + "\\";
+                        IEnumerator<ZipEntry> enumerator = null;
+                        using (ZipFile zipFile = ZipFile.Read(ZipName))
+                        {
+                            try
+                            {
+                                enumerator = zipFile.GetEnumerator();
+                                while (enumerator.MoveNext())
+                                    enumerator.Current.Extract(dir, ExtractExistingFileAction.OverwriteSilently);
+                            }
+                            finally
+                            {
+                                if (enumerator != null)
+                                    enumerator.Dispose();
+                            }
+                        }
+                        File.Delete(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + ZipName);
+                    }
+                    break;
+            }
         }
 
         #region Buttons/Labels/etc
@@ -320,18 +412,21 @@ namespace Zoombies_Universal_Launcher
             if (cb_modselect.Text == "Altis")
             {
                 btn_launchgame.Enabled = false;
+                btn_DownloadMod.Enabled = false;
                 //this.CheckRemoteVersions(2);
                 Console.WriteLine("You have selected: Altis");
             }
             else if (cb_modselect.Text == "Chernarus")
             {
                 btn_launchgame.Enabled = true;
+                btn_DownloadMod.Enabled = true;
                 this.CheckRemoteVersions(3);
                 Console.WriteLine("You have selected: Chernarus");
             }
             else if (cb_modselect.Text == "Taviana")
             {
                 btn_launchgame.Enabled = false;
+                btn_DownloadMod.Enabled = false;
                 //this.CheckRemoteVersions(4);
                 Console.WriteLine("You have selected: Taviana");
             }
@@ -394,6 +489,114 @@ namespace Zoombies_Universal_Launcher
                 //Process.Start(Launch_A3, Launch_Taviana_Args);   
             }
         }
+
+        void WC_ModDownload_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            double bytesIn = double.Parse(e.BytesReceived.ToString());
+            double totalBytes = double.Parse(e.TotalBytesToReceive.ToString());
+            double percentage = bytesIn / totalBytes * 100;
+
+            pb_DownloadMod.Value = int.Parse(Math.Truncate(percentage).ToString());
+
+            lbl_ProgressText.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        void WC_ModDownload_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("Download Completed!");
+            btn_DownloadMod.Text = "Download Completed!";
+            btn_DownloadMod.Enabled = true;
+            btn_launchgame.Enabled = true;
+            cb_modselect.Enabled = true;
+
+            this.ExtractMod("Chernarus");
+        }
+
+        private void btn_DownloadMod_Click(object sender, EventArgs e)
+        {
+            WebClient WC_ModDownload = new WebClient();
+            WC_ModDownload.Proxy = null;
+            WC_ModDownload.DownloadProgressChanged += new DownloadProgressChangedEventHandler(WC_ModDownload_DownloadProgressChanged);
+            WC_ModDownload.DownloadFileCompleted += new AsyncCompletedEventHandler(WC_ModDownload_DownloadFileCompleted);
+
+            if (cb_modselect.Text == "Altis")
+            {
+
+            }
+
+            if (cb_modselect.Text == "Chernarus")
+            {
+                btn_DownloadMod.Enabled = false;
+                btn_DownloadMod.Text = "Downloading";
+                btn_launchgame.Enabled = false;
+                cb_modselect.Enabled = false;
+
+                string DownloadString = GetDownloadURL("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_DownloadMod.txt");
+                string NameString = Directory.GetCurrentDirectory() + "\\" + GetSaveName("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_CurrentVersion.txt");
+
+                try
+                {
+                    pb_DownloadMod.Visible = true;
+                    WC_ModDownload.DownloadFileAsync(new Uri(DownloadString), NameString);
+                }
+                catch (WebException ex)
+                {
+                    MessageBox.Show(ex.ToString(), ApplicationName);
+                    Application.Exit();
+                }
+            }
+
+            if (cb_modselect.Text == "Taviana")
+            {
+
+            }
+        }
+
+        private void cleanupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("This will completly wipe out all your files related to DayZA3!\r\n\r\nAre you sure you want to continue?",
+                ApplicationName, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                string Delete_AiA = GlobalArmA3Location + "\\" + "@AllInArma";
+                string Delete_CBA = GlobalArmA3Location + "\\" + "@CBA_A3";
+                string Delete_Altis = GlobalArmA3Location + "\\" + "@DayZA3_Altis";
+                string Delete_Chernarus = GlobalArmA3Location + "\\" + "@DayZA3_Chernarus";
+                string Delete_Taviana = GlobalArmA3Location + "\\" + "@DayZA3_Taviana";
+
+                try
+                {
+                    if (Directory.Exists(Delete_AiA))
+                    {
+                        Directory.Delete(Delete_AiA, true);
+                    }
+
+                    if (Directory.Exists(Delete_CBA))
+                    {
+                        Directory.Delete(Delete_CBA, true);
+                    }
+
+                    if (Directory.Exists(Delete_Altis))
+                    {
+                        Directory.Delete(Delete_Altis, true);
+                    }
+
+                    if (Directory.Exists(Delete_Chernarus))
+                    {
+                        Directory.Delete(Delete_Chernarus, true);
+                    }
+
+                    if (Directory.Exists(Delete_Taviana))
+                    {
+                        Directory.Delete(Delete_Taviana, true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), ApplicationName);
+                }
+            }
+        }
         #endregion
+
     }
 }

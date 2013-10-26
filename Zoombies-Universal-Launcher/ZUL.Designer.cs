@@ -48,6 +48,9 @@
             this.lbl_selectmod = new System.Windows.Forms.Label();
             this.rtb_motd = new System.Windows.Forms.RichTextBox();
             this.btn_launchgame = new System.Windows.Forms.Button();
+            this.btn_DownloadMod = new System.Windows.Forms.Button();
+            this.pb_DownloadMod = new System.Windows.Forms.ProgressBar();
+            this.lbl_ProgressText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo_zoombies)).BeginInit();
             this.ms_zul.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lb_logo_hfb)).BeginInit();
@@ -131,6 +134,7 @@
             this.cleanupToolStripMenuItem.Name = "cleanupToolStripMenuItem";
             this.cleanupToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.cleanupToolStripMenuItem.Text = "Cleanup";
+            this.cleanupToolStripMenuItem.Click += new System.EventHandler(this.cleanupToolStripMenuItem_Click);
             // 
             // lb_logo_hfb
             // 
@@ -218,7 +222,7 @@
             // rtb_motd
             // 
             this.rtb_motd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb_motd.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_motd.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb_motd.Location = new System.Drawing.Point(15, 28);
             this.rtb_motd.Name = "rtb_motd";
             this.rtb_motd.ReadOnly = true;
@@ -230,7 +234,7 @@
             // btn_launchgame
             // 
             this.btn_launchgame.Enabled = false;
-            this.btn_launchgame.Location = new System.Drawing.Point(437, 250);
+            this.btn_launchgame.Location = new System.Drawing.Point(437, 249);
             this.btn_launchgame.Name = "btn_launchgame";
             this.btn_launchgame.Size = new System.Drawing.Size(120, 23);
             this.btn_launchgame.TabIndex = 23;
@@ -238,11 +242,44 @@
             this.btn_launchgame.UseVisualStyleBackColor = true;
             this.btn_launchgame.Click += new System.EventHandler(this.btn_launchgame_Click);
             // 
+            // btn_DownloadMod
+            // 
+            this.btn_DownloadMod.Enabled = false;
+            this.btn_DownloadMod.Location = new System.Drawing.Point(437, 224);
+            this.btn_DownloadMod.Name = "btn_DownloadMod";
+            this.btn_DownloadMod.Size = new System.Drawing.Size(120, 23);
+            this.btn_DownloadMod.TabIndex = 24;
+            this.btn_DownloadMod.Text = "Download";
+            this.btn_DownloadMod.UseVisualStyleBackColor = true;
+            this.btn_DownloadMod.Click += new System.EventHandler(this.btn_DownloadMod_Click);
+            // 
+            // pb_DownloadMod
+            // 
+            this.pb_DownloadMod.Location = new System.Drawing.Point(437, 278);
+            this.pb_DownloadMod.Name = "pb_DownloadMod";
+            this.pb_DownloadMod.Size = new System.Drawing.Size(120, 15);
+            this.pb_DownloadMod.TabIndex = 25;
+            this.pb_DownloadMod.Visible = false;
+            // 
+            // lbl_ProgressText
+            // 
+            this.lbl_ProgressText.AutoSize = true;
+            this.lbl_ProgressText.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ProgressText.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProgressText.Location = new System.Drawing.Point(406, 278);
+            this.lbl_ProgressText.Name = "lbl_ProgressText";
+            this.lbl_ProgressText.Size = new System.Drawing.Size(14, 15);
+            this.lbl_ProgressText.TabIndex = 26;
+            this.lbl_ProgressText.Text = "%";
+            // 
             // ZUL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 302);
+            this.Controls.Add(this.lbl_ProgressText);
+            this.Controls.Add(this.pb_DownloadMod);
+            this.Controls.Add(this.btn_DownloadMod);
             this.Controls.Add(this.btn_launchgame);
             this.Controls.Add(this.rtb_motd);
             this.Controls.Add(this.lbl_selectmod);
@@ -294,6 +331,9 @@
         private System.Windows.Forms.ToolStripMenuItem launcherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gamePathsToolStripMenuItem;
+        private System.Windows.Forms.Button btn_DownloadMod;
+        private System.Windows.Forms.ProgressBar pb_DownloadMod;
+        private System.Windows.Forms.Label lbl_ProgressText;
     }
 }
 
