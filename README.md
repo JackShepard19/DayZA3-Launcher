@@ -1,7 +1,5 @@
 # DayZA3-Launcher #
 
-----------
-
 ## About ##
 This is the official launcher for [DayZA3](https://github.com/Pwnoz0r/DayZA3 "Official DayZA3 Repository").
 
