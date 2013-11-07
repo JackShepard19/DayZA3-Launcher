@@ -33,12 +33,11 @@ namespace Zoombies_Universal_Launcher
             //Check for updates as soon as the server starts
             this.CheckForUpdates();
             this.ReadWriteConfigFile();
-            this.LocalVersions();
             this.GetMOTD();
-            this.CheckInstalledModVersions();
             btn_launchgame.Enabled = true;
 
             lbl_ProgressText.Text = "";
+            lbl_launcherVersion.Text = Application.ProductVersion;
         }
 
         private void CheckForUpdates()
@@ -186,64 +185,6 @@ namespace Zoombies_Universal_Launcher
         }
         #endregion
 
-        /* Old Registry Getting.
-        private void GetRegistry(string RequestRegistry)
-        {
-            switch (RequestRegistry)
-            {
-                case "ArmA2Location":
-                    try
-                    {
-                        ArmA2Location = (string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Bohemia Interactive Studio\\ArmA 2", "main", null);
-                        Console.WriteLine("ArmA2 Location: " + ArmA2Location);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-                    break;
-
-                case "ArmA2OALocation":
-                    try
-                    {
-                        ArmA2OALocation = (string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Bohemia Interactive Studio\\ArmA 2 OA", "main", null);
-                        Console.WriteLine("ArmA2OA Location: " + ArmA2OALocation);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-                    break;
-
-                case "ArmA2OABetaLocation":
-                    try
-                    {
-                        ArmA2OABetaLocation = (string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Bohemia Interactive Studio\\ArmA 2 OA", "DATA", null);
-                        Console.WriteLine("ArmA2OABeta Location: " + ArmA2OABetaLocation);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-                    break;
-
-                case "ArmA3Location":
-                    try
-                    {
-                        ArmA3Location = (string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Bohemia Interactive\\Arma 3", "main", null);
-                        Console.WriteLine("ArmA3 Location: " + ArmA3Location);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-        */
-
         public static string PathApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         public static string PathConfigFolder = PathApplicationData + "\\Zoombies-Universal-Launcher";
         public static string PathConfigFile = PathConfigFolder + "\\ZUL.xml";
@@ -274,20 +215,6 @@ namespace Zoombies_Universal_Launcher
                     MessageBox.Show(ex.ToString(), ApplicationName);
                 }
             }
-        }
-
-        //private void WriteConfigFile()
-        //{
-
-        //}
-  
-        private void LocalVersions()
-        {
-            Assembly ZUL_LocalVersion_Assembly = Assembly.GetExecutingAssembly();
-            FileVersionInfo ZUL_LocalVersion = FileVersionInfo.GetVersionInfo(ZUL_LocalVersion_Assembly.Location);
-            string ZUL_LocalVersion_String = ZUL_LocalVersion.FileVersion;
-
-            lbl_launcherVersion.Text = ZUL_LocalVersion_String;
         }
 
         private void ShowLabels()
@@ -335,24 +262,6 @@ namespace Zoombies_Universal_Launcher
             }
 
             return downloadresult;
-        }
-
-        public static string ClientVer_Chernarus;
-
-        private void CheckInstalledModVersions()
-        {
-            ClientVer_Chernarus = GlobalArmA3Location + "\\@DayZA3_Chernarus\\addons\\clientver.txt";
-            string Chernarus_CurrentModVersion = GetDownloadURL("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_CurrentModVersion.txt");
-
-            if (lbl_installedVersion.Text != Chernarus_CurrentModVersion)
-            {
-                if (File.Exists(ClientVer_Chernarus))
-                {
-                    string ClientVer_Chernarus_ReadText = File.ReadAllText(ClientVer_Chernarus);
-
-                    Console.WriteLine(ClientVer_Chernarus_ReadText);
-                }
-            }
         }
 
         private void ExtractMod(string mod)
@@ -456,13 +365,6 @@ namespace Zoombies_Universal_Launcher
 
         private void btn_launchgame_Click(object sender, EventArgs e)
         {
-            /*
-            Console.WriteLine("ArmA2 Location: " + GlobalArmA2Location);
-            Console.WriteLine("ArmA2OA Location: " + GlobalArmA2OALocation);
-            Console.WriteLine("ArmA2OABeta Location: " + GlobalArmA2OABetaLocation);
-            Console.WriteLine("ArmA3 Location: " + GlobalArmA3Location);
-            */
-
             string Launch_A3 = GlobalArmA3Location + "\\arma3.exe";
             string Launch_Altis_Args = "-world=altis -noPause -noSplash" + " -mod=@DayZA3_Altis";
             string Launch_Chernarus_Args = "-world=chernarus -noPause -noSplash" + " \"" +
