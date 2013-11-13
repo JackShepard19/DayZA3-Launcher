@@ -45,7 +45,7 @@ namespace Zoombies_Universal_Launcher
             WebClient GetUpdateURL = new WebClient();
             GetUpdateURL.Proxy = null;
 
-            string GetUpdateURLAsString = GetUpdateURL.DownloadString("http://74.91.121.95:8080/ZUL/Configs/version.txt");
+            string GetUpdateURLAsString = GetUpdateURL.DownloadString("http://cdn.hfbservers.com/zoombies/launcher/config/version.txt");
             string ProductVersionAsString = Application.ProductVersion;
 
             try
@@ -88,7 +88,7 @@ namespace Zoombies_Universal_Launcher
             XmlDocument ZLConfig = new XmlDocument();
             try
             {
-                ZLConfig.Load("http://74.91.121.95:8080/DayZA3/launcher/config.xml");
+                ZLConfig.Load("http://cdn.hfbservers.com/zoombies/launcher/config/config.xml");
             }
             catch (WebException ex)
             {
@@ -271,22 +271,15 @@ namespace Zoombies_Universal_Launcher
                 case "Chernarus":
                     if (!String.IsNullOrEmpty(GlobalArmA3Location))
                     {
-                        string ZipName = GetDownloadURL("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_CurrentVersion.txt");
+                        string ZipName = GetDownloadURL("http://cdn.hfbservers.com/zoombies/launcher/config/Mod/Chernarus_CurrentVersion.txt");
 
-                        string dir = GlobalArmA3Location + "\\";
-                        IEnumerator<ZipEntry> enumerator = null;
-                        using (ZipFile zipFile = ZipFile.Read(ZipName))
+                        string ZipUnpack = ZipName;
+                        string ZipUnpackDir = "Extracted Files";
+                        using (ZipFile zip1 = ZipFile.Read(ZipUnpack))
                         {
-                            try
+                            foreach (ZipEntry e in zip1)
                             {
-                                enumerator = zipFile.GetEnumerator();
-                                while (enumerator.MoveNext())
-                                    enumerator.Current.Extract(dir, ExtractExistingFileAction.OverwriteSilently);
-                            }
-                            finally
-                            {
-                                if (enumerator != null)
-                                    enumerator.Dispose();
+                                e.Extract(ZipUnpackDir, ExtractExistingFileAction.OverwriteSilently);
                             }
                         }
                         File.Delete(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + ZipName);
@@ -304,7 +297,7 @@ namespace Zoombies_Universal_Launcher
 
             try
             {
-                MOTD = WC_MOTD.DownloadString("http://74.91.121.95:8080/ZUL/Configs/motd.txt");
+                MOTD = WC_MOTD.DownloadString("http://cdn.hfbservers.com/zoombies/launcher/config/motd.txt");
                 rtb_motd.Text = MOTD;
             }
             catch (WebException ex)
@@ -407,7 +400,7 @@ namespace Zoombies_Universal_Launcher
         {
             MessageBox.Show("Download Completed!");
             btn_DownloadMod.Text = "Download Completed!";
-            btn_DownloadMod.Enabled = true;
+            btn_DownloadMod.Enabled = false;
             btn_launchgame.Enabled = true;
             cb_modselect.Enabled = true;
 
@@ -433,8 +426,8 @@ namespace Zoombies_Universal_Launcher
                 btn_launchgame.Enabled = false;
                 cb_modselect.Enabled = false;
 
-                string DownloadString = GetDownloadURL("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_DownloadMod.txt");
-                string NameString = Directory.GetCurrentDirectory() + "\\" + GetSaveName("http://74.91.121.95:8080/ZUL/Configs/Mod/Chernarus_CurrentVersion.txt");
+                string DownloadString = GetDownloadURL("http://cdn.hfbservers.com/zoombies/launcher/config/Mod/Chernarus_DownloadMod.txt");
+                string NameString = Directory.GetCurrentDirectory() + "\\" + GetSaveName("http://cdn.hfbservers.com/zoombies/launcher/config/Mod/Chernarus_CurrentVersion.txt");
 
                 try
                 {

@@ -25,7 +25,7 @@ namespace Zoombies_Universal_Launcher_Updater
         {
             WebClient GetUpdateURL = new WebClient();
             GetUpdateURL.Proxy = null;
-            string GetUpdateURLString = GetUpdateURL.DownloadString("http://74.91.121.95:8080/ZUL/Configs/download.txt");
+            string GetUpdateURLString = GetUpdateURL.DownloadString("http://cdn.hfbservers.com/zoombies/launcher/config/download.txt");
             DownloadUpdate(GetUpdateURLString);
         }
 
